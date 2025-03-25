@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-player">
+        <div class="sidebar">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search music...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="upload-container">
+                <input type="file" id="fileInput" accept="audio/*" multiple style="display: none;">
+                <button id="uploadButton"><i class="fas fa-upload"></i> Add Songs</button>
+            </div>
+            <div class="categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li data-category="all" class="active">All Songs</li>
+                    <li data-category="pop">Pop</li>
+                    <li data-category="rock">Rock</li>
+                    <li data-category="jazz">Jazz</li>
+                    <li data-category="classical">Classical</li>
+                </ul>
+            </div>
+            <div class="playlist">
+                <h3>Playlist</h3>
+                <ul id="playlist">
+                    <!-- Playlist items will be added dynamically -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="now-playing">
+                <div class="song-info">
+                    <img src="https://via.placeholder.com/200" alt="Album Art" id="albumArt">
+                    <h2 id="songTitle">Song Title</h2>
+                    <p id="artistName">Artist Name</p>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="time">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="shuffleBtn"><i class="fas fa-random"></i></button>
+                    <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                    <button id="playBtn"><i class="fas fa-play"></i></button>
+                    <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                    <button id="repeatBtn"><i class="fas fa-redo"></i></button>
+                </div>
+                
+                <div class="volume-container">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
